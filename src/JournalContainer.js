@@ -8,6 +8,7 @@ function JournalContainer(props){
             journal={singularJournal}
             content={singularJournal.content}
             date={singularJournal.date}
+            deleteJournalFromState={props.deleteJournalFromState}
             
 
             

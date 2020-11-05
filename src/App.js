@@ -4,6 +4,8 @@ import Header from './header'
 import React, { Component } from 'react'
 import JournalContainer from './JournalContainer'
 import NewJournalForm from './newJournalForm'
+import LogContainer from './LogContainer'
+import NewLogForm from './newLogForm'
 
 import { Route, Switch, Link, NavLink } from 'react-router-dom'
 
@@ -11,7 +13,8 @@ class App extends Component {
 
   state = {
     journalEntries: [],
-    logs: []
+    logs: [],
+    moods: []
   }
 
   componentDidMount(){
@@ -31,6 +34,14 @@ class App extends Component {
         })
       })
 
+      fetch("http://localhost:3000/moods")
+      .then(res => res.json())
+      .then((arrayOfMoods) => {
+        this.setState({
+          moods: arrayOfMoods
+        })
+      })
+
   }
 
   addJournalToState = (newlyCreatedJournal) => {
@@ -39,7 +50,22 @@ class App extends Component {
       journalEntries: copyOfJournals
     })
   }
+
+  addLogToState = (newlyCreatedLog) => {
+    let copyOfLogs = [newlyCreatedLog, ...this.state.logs]
+    this.setState({
+      logs: copyOfLogs
+    })
+  }
   
+  deleteJournalFromState = (deletedID) => {
+    let copyOfJournals = this.state.journalEntries.filter(journal => {
+      return journal.id !== deletedID
+    })
+    this.setState({
+      journalEntries: copyOfJournals
+    })
+  }
 
   render() {
    
@@ -68,8 +94,19 @@ class App extends Component {
             <NewJournalForm
             addJournalToState= {this.addJournalToState} />
 
-            <JournalContainer journalEntries = {this.state.journalEntries} />
+            <JournalContainer journalEntries = {this.state.journalEntries}
+             deleteJournalFromState={this.deleteJournalFromState} />
 
+          </Route>
+
+          <Route path="/logs">
+          <NewLogForm
+            addLogToState= {this.addLogToState}
+            moods={this.state.moods} />
+
+            <LogContainer 
+            moods={this.state.moods}
+            logs={this.state.logs} />
           </Route>
           
         </div>

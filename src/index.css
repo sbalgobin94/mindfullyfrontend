@@ -14,7 +14,7 @@ code {
 
 .sidebar {
   float: left;
-  background: #4DACAE;
+  background: grey;
   color: white;
 }
 
@@ -32,5 +32,5 @@ code {
 }
 
 .active {
-  background: grey;
+  background: teal
 }
