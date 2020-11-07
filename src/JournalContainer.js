@@ -9,10 +9,13 @@ function JournalContainer(props){
             content={singularJournal.content}
             date={singularJournal.date}
             deleteJournalFromState={props.deleteJournalFromState}
+            updateJournalFromState= {props.updateJournalFromState}
+            
             
 
             
         />
+
     })
     
     return(

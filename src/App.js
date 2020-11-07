@@ -6,6 +6,8 @@ import JournalContainer from './JournalContainer'
 import NewJournalForm from './newJournalForm'
 import LogContainer from './LogContainer'
 import NewLogForm from './newLogForm'
+import { Button, Card } from 'react-bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 import { Route, Switch, Link, NavLink } from 'react-router-dom'
 
@@ -56,6 +58,7 @@ class App extends Component {
     this.setState({
       logs: copyOfLogs
     })
+    console.log(this.state.logs)
   }
   
   deleteJournalFromState = (deletedID) => {
@@ -66,6 +69,21 @@ class App extends Component {
       journalEntries: copyOfJournals
     })
   }
+
+  updateJournalFromState = (updatedObj) => {
+    console.log(updatedObj)
+    let copyOfJournals = this.state.journalEntries.map((journal) => {
+      if(journal.id === updatedObj.id){
+        return updatedObj
+      } else {
+        return journal
+      }
+    })
+    this.setState({
+      journalEntries: copyOfJournals
+    })
+  }
+
 
   render() {
    
@@ -95,7 +113,8 @@ class App extends Component {
             addJournalToState= {this.addJournalToState} />
 
             <JournalContainer journalEntries = {this.state.journalEntries}
-             deleteJournalFromState={this.deleteJournalFromState} />
+             deleteJournalFromState={this.deleteJournalFromState}
+             updateJournalFromState={this.updateJournalFromState} />
 
           </Route>
 

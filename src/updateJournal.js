@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 let today = new Date();
 let currentDate = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
 
-class NewJournalForm extends React.Component{
+class UpdateJournalForm extends React.Component{
 
         state = {
             date: today,
@@ -23,9 +23,10 @@ class NewJournalForm extends React.Component{
     
         handleSubmit = (evt) => {
             evt.preventDefault()
+            console.log(this.props.journal.id)
     
-        fetch("http://localhost:3000/journals", {
-            method: "POST",
+        fetch(`http://localhost:3000/journals/${this.props.journal.id}`, {
+            method: "PATCH",
             headers: {
                 "Content-Type": "Application/json"
             },
@@ -36,14 +37,15 @@ class NewJournalForm extends React.Component{
             })
         })
             .then(res => res.json())
-            .then((newlyCreatedJournal)=> {
-                this.props.addJournalToState(newlyCreatedJournal)
+            .then((updatedObj)=> {
+                this.props.updateJournalFromState(updatedObj)
             })
 
             this.setState({
-                    content: ""
-            }
-            )
+                content: ""
+        }
+        )
+            
     }
 
     render(){
@@ -57,13 +59,13 @@ class NewJournalForm extends React.Component{
                 <textarea 
                 id="content" 
                 name="content" 
-                placeholder="Start journaling..."
+                placeholder="Update entry..."
                 value={this.state.content} 
                 onChange={this.handleInputChange}
                 rows="10" 
                 cols="30">Start journaling...</textarea>
                 <br></br>
-                <input type="submit" value="Publish" />
+                <input type="submit" value="Submit" />
             </form>
             </p>
         </div>
@@ -71,4 +73,4 @@ class NewJournalForm extends React.Component{
     }
 }
 
-export default NewJournalForm
+export default UpdateJournalForm

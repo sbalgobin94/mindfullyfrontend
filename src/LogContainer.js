@@ -3,7 +3,6 @@ import Log from './Log'
 
 function LogContainer(props){
     let arrayOfComponents = props.logs.map((singularLog) => {
-        console.log(props.moods)
         return <Log 
             key={singularLog.id} 
             log={singularLog}
@@ -11,7 +10,7 @@ function LogContainer(props){
             date={singularLog.date}
             moods={props.moods}
             
-        />
+        /> 
     })
     
     return(
