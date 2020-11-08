@@ -70,6 +70,17 @@ class App extends Component {
     })
   }
 
+  deleteLogFromState = (deletedID) => {
+    let copyOfLogs = this.state.logs.filter(log => {
+      return log.id !== deletedID
+    })
+    this.setState({
+      logs: copyOfLogs
+    })
+  }
+
+  
+
   updateJournalFromState = (updatedObj) => {
     console.log(updatedObj)
     let copyOfJournals = this.state.journalEntries.map((journal) => {
@@ -88,6 +99,7 @@ class App extends Component {
   render() {
    
     return (
+      
       <div className="App">
         <header className="App-header">
           <Header/>
@@ -125,11 +137,11 @@ class App extends Component {
 
             <LogContainer 
             moods={this.state.moods}
-            logs={this.state.logs} />
+            logs={this.state.logs}
+            deleteLogFromState={this.deleteLogFromState} />
           </Route>
-          
         </div>
-
+      
         
 
     )
