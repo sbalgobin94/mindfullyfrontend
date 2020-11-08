@@ -11,7 +11,7 @@ class UpdateJournalForm extends React.Component{
 
         state = {
             date: today,
-            content: ""
+            content: this.props.content
         }
 
     handleInputChange = (evt) => {

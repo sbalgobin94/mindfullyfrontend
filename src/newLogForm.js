@@ -45,7 +45,11 @@ class NewLogForm extends React.Component{
     render(){
         return(
             <div>
-                <h2>How are you feeling today?</h2>
+                <br></br>
+                <br></br>
+                <br></br>
+                <center>
+                <center><h2>How are you feeling today?</h2></center>
                 <form onSubmit={this.handleSubmit}>
                 <label htmlFor="mood_id"> 
                 <select name="mood_id" id="mood_id" value={this.state.mood_id} onChange={this.handleInputChange}>
@@ -60,7 +64,12 @@ class NewLogForm extends React.Component{
         
                     <input type="submit" value="Enter" />
                 </form>
+                </center>
+                <br></br>
+                <br></br>
+                <br></br>
             </div>
+            
         )
     }
 }

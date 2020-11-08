@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import JournalContainer from './JournalContainer'
 import UpdateJournalForm from './updateJournal'
+import { Button, Card } from 'react-bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 let today = new Date();
 let currentDate = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
@@ -8,7 +10,7 @@ let currentDate = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate
 class Journal extends Component{
 
     state = {
-        displayUpdateForm : false
+        displayUpdateForm : false,
     }
 
     displayUpdateForm = () => {
@@ -46,25 +48,28 @@ class Journal extends Component{
         }
 
         return( 
-            <div className ="container">
+            <Card className ="mb-3 journalcard">
+                <Card.Body>
                 <p align="right">
                 <button className="delButton" onClick={this.handleDelete}>
                 🗑️
                 </button> 
                 </p>
                 
-                 <h6>{date}</h6>
-                  
-                 <p>{content}</p>
+                 <Card.Title>{date}</Card.Title>
+                 <p align="left">
+                 <Card.Text>{content}</Card.Text>
+                 </p>
                  
-                <button className="updButton" onClick={this.displayUpdateForm}>✍️    
+                <button className="card-link" onClick={this.displayUpdateForm}>✍️    
                 </button>
 
                 {updateForm}
 
                
-                
-            </div>
+                </Card.Body>
+            </Card>
+        
 
              
 

@@ -10,7 +10,8 @@ class Log extends Component{
         console.log(this.props)
         return( 
             
-            <Card className ="mb-3">
+            <center>
+            <Card className ="mb-3 logcard">
                 <Card.Body>
                 <Card.Title>{this.props.date}</Card.Title>
                  <Card.Text>{this.props.moodName}</Card.Text>
@@ -19,6 +20,7 @@ class Log extends Component{
 
                  
             </Card>
+            </center>
 
         )
     }
