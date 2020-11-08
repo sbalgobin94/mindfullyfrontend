@@ -10,6 +10,7 @@ function LogContainer(props){
             date={singularLog.date}
             moods={props.moods}
             deleteLogFromState={props.deleteLogFromState}
+            updateLogFromState={props.updateLogFromState}
             
         /> 
     })

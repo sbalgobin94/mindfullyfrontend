@@ -82,7 +82,6 @@ class App extends Component {
   
 
   updateJournalFromState = (updatedObj) => {
-    console.log(updatedObj)
     let copyOfJournals = this.state.journalEntries.map((journal) => {
       if(journal.id === updatedObj.id){
         return updatedObj
@@ -94,6 +93,21 @@ class App extends Component {
       journalEntries: copyOfJournals
     })
   }
+
+  updateLogFromState = (updatedObj) => {
+    let copyOfLogs = this.state.logs.map((log) => {
+      if(log.id === updatedObj.id){
+        return updatedObj
+      } else {
+        return log
+      }
+    })
+    this.setState({
+      logs: copyOfLogs
+    })
+  }
+
+ 
 
 
   render() {
@@ -138,7 +152,8 @@ class App extends Component {
             <LogContainer 
             moods={this.state.moods}
             logs={this.state.logs}
-            deleteLogFromState={this.deleteLogFromState} />
+            deleteLogFromState={this.deleteLogFromState}
+            updateLogFromState={this.updateLogFromState} />
           </Route>
         </div>
       
