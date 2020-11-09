@@ -48,6 +48,7 @@ class Journal extends Component{
         }
 
         return( 
+            <center>
             <Card className ="mb-3 journalcard">
                 <Card.Body>
                 <p align="right">
@@ -56,9 +57,8 @@ class Journal extends Component{
                 </button> 
                 </p>
                 
-                 <Card.Title>{date}</Card.Title>
-                 <p align="left">
-                 <Card.Text>{content}</Card.Text>
+                 <p align="center" className="date"><strong>{date}</strong></p>
+                 <p align="left">{content}
                  </p>
                  
                 <button className="card-link" onClick={this.displayUpdateForm}>✍️    
@@ -69,6 +69,7 @@ class Journal extends Component{
                
                 </Card.Body>
             </Card>
+            </center>
         
 
              

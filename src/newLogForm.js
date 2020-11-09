@@ -9,7 +9,7 @@ class NewLogForm extends React.Component{
  
 
         state = {
-            mood_id: "1",
+            mood_id: "4",
             date: today
         }
 
@@ -49,20 +49,20 @@ class NewLogForm extends React.Component{
                 <br></br>
                 <br></br>
                 <center>
-                <center><h2>How are you feeling today?</h2></center>
+                <center><h3 className="feel">How are you feeling today?</h3></center>
+                <br></br>
                 <form onSubmit={this.handleSubmit}>
                 <label htmlFor="mood_id"> 
                 <select name="mood_id" id="mood_id" value={this.state.mood_id} onChange={this.handleInputChange}>
-                    <option value="1">Happy  🙂 </option>
-                    <option value="2">Sad</option>
-                    <option value="3">Anxious</option>
-                    <option value="4">Tired</option>
-                    <option value="5">Excited</option>
+                    <option value="4">Awesome 😁</option>
+                    <option value="3">Happy 🙂</option>
+                    <option value="2">Meh 😕</option>
+                    <option value="1">Horrible 😰</option>
                 </select>
         
                 </label>    
         
-                    <input type="submit" value="Enter" />
+                    <input type="submit" value="Log" />
                 </form>
                 </center>
                 <br></br>

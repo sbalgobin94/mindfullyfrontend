@@ -54,11 +54,11 @@ class UpdateLogForm extends React.Component{
                 <form onSubmit={this.handleSubmit}>
                 <label htmlFor="mood_id"> 
                 <select name="mood_id" id="mood_id" value={this.state.mood_id} onChange={this.handleInputChange}>
-                    <option value="1">Happy  🙂 </option>
-                    <option value="2">Sad</option>
-                    <option value="3">Anxious</option>
-                    <option value="4">Tired</option>
-                    <option value="5">Excited</option>
+                    <option value="4">Awesome 😁</option>
+                    <option value="3">Happy 🙂</option>
+                    <option value="2">Meh 😕</option>
+                    <option value="1">Horrible 😰</option>
+                 
                 </select>
         
                 </label>    

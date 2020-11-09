@@ -5,8 +5,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  
 }
 
 code {
@@ -16,7 +14,7 @@ code {
 
 .sidebar {
   float: left;
-  background: grey;
+  background: #f7f9fb;
   color: white;
 }
 
@@ -27,14 +25,14 @@ code {
 }
 
 .sidebar a {
-  color: white;
+  color:black;
   text-decoration: none;
   padding: 15px;
   display: block;
 }
 
 .active {
-  background: teal
+  background: #687864;
 }
 
 .card:hover {
@@ -50,6 +48,20 @@ code {
 }
 
 .logcard {
-  width: 400px;
-  height: 300px;
+  width: 450px;
+  height: 400px;
 }
+
+.moodimg {
+  width: 100px;
+  height: 100px;
+}
+
+.date{
+  color: #31708e
+}
+
+.feel{
+  color: #5085A5
+}
+

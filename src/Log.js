@@ -29,6 +29,7 @@ class Log extends Component{
 
 
     render (){
+        console.log(this.props.mood_id)
         let updateForm = null
 
         if (this.state.displayUpdateForm) {
@@ -50,10 +51,13 @@ class Log extends Component{
                 🗑️
                 </button> 
                 </p>
-                <Card.Title>{this.props.date}</Card.Title>
-                 <Card.Text>{this.props.moodName}</Card.Text>
+                <p className= "date"><strong>{this.props.date}</strong></p>
+                <img className= "moodimg" src={this.props.moodImg} alt="Card image"/>
+                
+                <br></br>
+                <br></br>
+                 <button className="card-link" onClick={this.displayUpdateForm}>✏️</button>
 
-                 <button className="card-link" onClick={this.displayUpdateForm}>Edit</button>
                  
                  </Card.Body>
 

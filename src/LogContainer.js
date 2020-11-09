@@ -7,6 +7,8 @@ function LogContainer(props){
             key={singularLog.id} 
             log={singularLog}
             moodName={singularLog.mood.name}
+            moodImg={singularLog.mood.img_url}
+            value={singularLog.mood.value}
             date={singularLog.date}
             moods={props.moods}
             deleteLogFromState={props.deleteLogFromState}
