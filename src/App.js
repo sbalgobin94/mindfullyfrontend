@@ -10,6 +10,7 @@ import MoodChart from './MoodChart'
 import { Button, Card } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import {Line} from 'react-chartjs-2'
+import Search from './Search'
 
 
 import { Route, Switch, Link, NavLink } from 'react-router-dom'
@@ -19,7 +20,14 @@ class App extends Component {
   state = {
     journalEntries: [],
     logs: [],
-    moods: []
+    moods: [],
+    searchTerm: ""
+  }
+
+  changeSearchTerm = (termFromChild) => {
+    this.setState({
+      searchTerm: termFromChild
+    })
   }
 
   componentDidMount(){
@@ -114,7 +122,11 @@ class App extends Component {
 
 
   render() {
-   
+    let {journalEntries, searchTerm} = this.state
+    let filteredArray = journalEntries.filter((journal) => {
+      return journal.content.toLowerCase().includes(searchTerm.toLowerCase())
+    })
+
     return (
       
       <div className="App">
@@ -129,7 +141,7 @@ class App extends Component {
                 to={`/journals`}>
                   Journal
               </NavLink>
-              
+
               <NavLink 
                 key= "logs"
                 to={`/logs`}>
@@ -140,10 +152,16 @@ class App extends Component {
 
           
           <Route path="/journals">
+            
             <NewJournalForm
             addJournalToState= {this.addJournalToState} />
 
-            <JournalContainer journalEntries = {this.state.journalEntries}
+            < Search 
+            searchTerm={this.state.searchTerm} 
+            changeSearchTerm={this.changeSearchTerm}
+            />
+
+            <JournalContainer journalEntries = {filteredArray}
              deleteJournalFromState={this.deleteJournalFromState}
              updateJournalFromState={this.updateJournalFromState} />
 
