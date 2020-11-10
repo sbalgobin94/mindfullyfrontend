@@ -2,15 +2,15 @@ import { render } from '@testing-library/react';
 import React, { Component } from 'react'
 import LogContainer from './LogContainer'
 
-let today = new Date();
-let currentDate = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+let thisday = new Date();
+let currentDate = thisday.getFullYear()+'-'+(thisday.getMonth()+1)+'-'+thisday.getDate();
 
 class NewLogForm extends React.Component{
  
 
         state = {
             mood_id: "4",
-            date: today
+            date: thisday
         }
 
     handleInputChange = (evt) => {

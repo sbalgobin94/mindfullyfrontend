@@ -6,8 +6,11 @@ import JournalContainer from './JournalContainer'
 import NewJournalForm from './newJournalForm'
 import LogContainer from './LogContainer'
 import NewLogForm from './newLogForm'
+import MoodChart from './MoodChart'
 import { Button, Card } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import {Line} from 'react-chartjs-2'
+
 
 import { Route, Switch, Link, NavLink } from 'react-router-dom'
 
@@ -118,6 +121,7 @@ class App extends Component {
         <header className="App-header">
           <Header/>
         </header>
+      
         <aside className="sidebar">
               <ul>
               <NavLink 
@@ -125,6 +129,7 @@ class App extends Component {
                 to={`/journals`}>
                   Journal
               </NavLink>
+              
               <NavLink 
                 key= "logs"
                 to={`/logs`}>
@@ -145,6 +150,7 @@ class App extends Component {
           </Route>
 
           <Route path="/logs">
+          <MoodChart logs={this.state.logs}/>
           <NewLogForm
             addLogToState= {this.addLogToState}
             moods={this.state.moods} />

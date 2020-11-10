@@ -4,13 +4,13 @@ import JournalContainer from './JournalContainer'
 import { Button, Card } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-let today = new Date();
-let currentDate = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+let thisday = new Date();
+let currentDate = thisday.getFullYear()+'-'+(thisday.getMonth()+1)+'-'+thisday.getDate();
 
 class NewJournalForm extends React.Component{
 
         state = {
-            date: today,
+            date: thisday,
             content: ""
         }
 

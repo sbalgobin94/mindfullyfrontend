@@ -3,6 +3,7 @@
   background-color: #f7f9fb;
 }
 
+
 .App-logo {
   height: 20vmin;
   pointer-events: none;
@@ -86,3 +87,9 @@ input[type='submit']{
 label {
   flex: 1;
 }
+
+.chart {
+  width: 400px;
+  height: 200px;
+}
+
