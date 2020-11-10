@@ -54,16 +54,16 @@ class NewJournalForm extends React.Component{
             <p align = "center">
             <form onSubmit={this.handleSubmit}>
                 <label htmlFor="content"></label>
-                <textarea 
+                <center><textarea 
                 id="content" 
                 name="content" 
                 placeholder="Start journaling..."
                 value={this.state.content} 
                 onChange={this.handleInputChange}
                 rows="10" 
-                cols="40">Start journaling...</textarea>
+                cols="50">Start journaling...</textarea></center>
                 <br></br>
-                <input type="submit" value="Publish" />
+                <center><input type="submit" value="Publish" /></center>
             </form>
             </p>
         </div>

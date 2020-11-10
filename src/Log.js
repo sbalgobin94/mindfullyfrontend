@@ -38,6 +38,7 @@ class Log extends Component{
             log={this.props.log}
             mood_id={this.props.log.mood_id}
             key={this.props.log.id}
+            notes={this.props.log.notes}
             date={this.props.log.date} />
         }
 
@@ -53,9 +54,9 @@ class Log extends Component{
                 </p>
                 <p className= "date"><strong>{this.props.date}</strong></p>
                 <img className= "moodimg" src={this.props.moodImg} alt="Card image"/>
-                
                 <br></br>
                 <br></br>
+                <p className= "notes">{this.props.notes}</p>
                  <button className="card-link" onClick={this.displayUpdateForm}>✏️</button>
 
                  

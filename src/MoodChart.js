@@ -105,8 +105,11 @@ function MoodChart(props) {
         labels: pastWeek,
         datasets: [
             {
-                label: 'Mood',
-                data: moodValues
+                label: 'Mood Over Past 7 Days',
+                data: moodValues,
+                
+
+                
             }
         ]
 

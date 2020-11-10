@@ -11,7 +11,8 @@ class UpdateLogForm extends React.Component{
 
         state = {
             mood_id: this.props.mood_id,
-            date: this.props.date
+            date: this.props.date,
+            notes: this.props.notes
         }
 
     handleInputChange = (evt) => {
@@ -33,7 +34,8 @@ class UpdateLogForm extends React.Component{
         body: JSON.stringify({
             user_id: 1,
             mood_id: this.state.mood_id,
-            date: this.state.date
+            date: this.state.date,
+            notes: this.state.notes
         })
     })
         .then(res => res.json())
@@ -60,8 +62,18 @@ class UpdateLogForm extends React.Component{
                     <option value="1">Horrible 😰</option>
                  
                 </select>
-        
                 </label>    
+
+                <center><label htmlFor="notes"></label></center>
+                <center><textarea
+                    type="text"
+                    id="notes"
+                    name="notes"
+                    rows="5"
+                    columns="10"
+                    placeholder="Add some notes about your day..."
+                    value={this.state.notes}
+                    onChange={this.handleInputChange} /></center>
         
                     <input type="submit" value="Enter" />
                 </form>

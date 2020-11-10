@@ -6,6 +6,7 @@ function LogContainer(props){
         return <Log 
             key={singularLog.id} 
             log={singularLog}
+            notes={singularLog.notes}
             moodName={singularLog.mood.name}
             moodImg={singularLog.mood.img_url}
             value={singularLog.mood.value}

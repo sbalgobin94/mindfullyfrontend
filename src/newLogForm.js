@@ -10,7 +10,8 @@ class NewLogForm extends React.Component{
 
         state = {
             mood_id: "4",
-            date: thisday
+            date: thisday,
+            notes: ""
         }
 
     handleInputChange = (evt) => {
@@ -31,7 +32,8 @@ class NewLogForm extends React.Component{
             body: JSON.stringify({
                 mood_id: parseInt(this.state.mood_id),
                 date: this.state.date,
-                user_id: 1
+                user_id: 1,
+                notes: this.state.notes
             })
         })
             .then(res => res.json())
@@ -59,9 +61,19 @@ class NewLogForm extends React.Component{
                     <option value="2">Meh 😕</option>
                     <option value="1">Horrible 😰</option>
                 </select>
-        
                 </label>    
-        
+                <br></br>
+                <center><label htmlFor="notes"></label></center>
+                <center><textarea
+                    type="text"
+                    id="notes"
+                    name="notes"
+                    rows="5"
+                    columns="10"
+                    placeholder="Add some notes about your day..."
+                    value={this.state.notes}
+                    onChange={this.handleInputChange} /></center>
+
                     <input type="submit" value="Log" />
                 </form>
                 </center>
