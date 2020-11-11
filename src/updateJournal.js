@@ -63,7 +63,7 @@ class UpdateJournalForm extends React.Component{
                 value={this.state.content} 
                 onChange={this.handleInputChange}
                 rows="10" 
-                cols="30">Start journaling...</textarea>
+                cols="50">Start journaling...</textarea>
                 <br></br>
                 <input type="submit" value="Submit" />
             </form>

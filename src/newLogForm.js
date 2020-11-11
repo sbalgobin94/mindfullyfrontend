@@ -41,6 +41,10 @@ class NewLogForm extends React.Component{
                 this.props.addLogToState(newlyCreatedLog)
             })
 
+            this.setState({
+                notes: ""
+        }
+        )
             
     }
 
@@ -68,8 +72,8 @@ class NewLogForm extends React.Component{
                     type="text"
                     id="notes"
                     name="notes"
-                    rows="5"
-                    columns="10"
+                    rows="10"
+                    columns="50"
                     placeholder="Add some notes about your day..."
                     value={this.state.notes}
                     onChange={this.handleInputChange} /></center>

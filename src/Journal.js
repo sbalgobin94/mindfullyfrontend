@@ -3,6 +3,7 @@ import JournalContainer from './JournalContainer'
 import UpdateJournalForm from './updateJournal'
 import { Button, Card } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import Accordion from 'react-bootstrap/Accordion'
 
 let today = new Date();
 let currentDate = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
@@ -47,9 +48,11 @@ class Journal extends Component{
             key={this.props.journal.id} />
         }
 
+
         return( 
             <center>
-            <Card className ="mb-3 journalcard">
+
+            <Card className ="journalcard card border-secondary">
                 <Card.Body>
                 <p align="right">
                 <button className="delButton" onClick={this.handleDelete}>
@@ -57,18 +60,35 @@ class Journal extends Component{
                 </button> 
                 </p>
                 
-                 <p align="center" className="date"><strong>{date}</strong></p>
-                 <p align="left">{content}
+                 <Card.Header><p align="left" className="date"><strong>{date}</strong></p></Card.Header>
+                 <p className= "scrollabletextbox" align="left">{content}
                  </p>
                  
-                <button className="card-link" onClick={this.displayUpdateForm}>✍️    
+               {/* <button className="card-link" onClick={this.displayUpdateForm}>✍️    
                 </button>
-
-                {updateForm}
+                    {updateForm} */}
+               
 
                
                 </Card.Body>
             </Card>
+            
+            <Accordion>
+                <Card>
+                    
+                    <Accordion.Toggle as={Button} variant="link" eventKey="0" className="accordion" onClick={this.displayUpdateForm}>
+                    ✍️
+                    </Accordion.Toggle>
+                    
+                    <Accordion.Collapse eventKey="0">
+                    <Card.Body>{updateForm}</Card.Body>
+                    </Accordion.Collapse>
+                </Card>
+            </Accordion>
+            <br></br>
+                <br></br>
+
+            
             </center>
         
 

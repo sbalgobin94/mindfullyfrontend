@@ -8,7 +8,7 @@ function Search(props){
     }
 
     return(
-        <>
+        <div className= "searchfunction" align="center">
             <input type="text" 
                 name="search" 
                 className="search"
@@ -19,7 +19,7 @@ function Search(props){
             <br></br>
             <br></br>
             
-        </>
+            </div>
     )
 
 }

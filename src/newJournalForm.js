@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import JournalContainer from './JournalContainer'
 import { Button, Card } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import Accordion from 'react-bootstrap/Accordion'
 
 let thisday = new Date();
 let currentDate = thisday.getFullYear()+'-'+(thisday.getMonth()+1)+'-'+thisday.getDate();
@@ -49,24 +50,43 @@ class NewJournalForm extends React.Component{
     render(){
         return(
             <div>
-            <h2></h2>
-            <br></br>
-            <p align = "center">
-            <form onSubmit={this.handleSubmit}>
+                <br></br>
+                <br></br>
+                <br></br>
+                <center>
+                <Accordion>
+                <Card>
+                    
+                    <Accordion.Toggle as={Button} variant="link" eventKey="1" className="accordion" onClick={this.displayUpdateForm}>
+                    ➕
+                    </Accordion.Toggle>
+                    
+                    <Accordion.Collapse eventKey="1">
+                    <Card.Body><center><form onSubmit={this.handleSubmit}>
                 <label htmlFor="content"></label>
-                <center><textarea 
+                <textarea 
+                className= "scrollabletextbox2"
                 id="content" 
                 name="content" 
                 placeholder="Start journaling..."
                 value={this.state.content} 
                 onChange={this.handleInputChange}
-                rows="10" 
-                cols="40">Start journaling...</textarea></center>
+                rows="10"
+                cols="50"
+
+                >Start journaling...</textarea>
                 <br></br>
                 <center><input type="submit" value="Publish" /></center>
                 <br></br>
-            </form>
-            </p>
+            </form></center></Card.Body>
+                    </Accordion.Collapse>
+                </Card>
+            </Accordion>
+            </center>
+            <br></br>
+            <br></br>
+            <br></br>
+
         </div>
         )
     }
