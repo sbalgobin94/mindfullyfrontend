@@ -48,6 +48,17 @@ class Journal extends Component{
             key={this.props.journal.id} />
         }
 
+        let months= ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+        let journaldate= this.props.date
+        let newDate= new Date(journaldate + 'T00:00:00')
+        let options = {
+            year: 'numeric', month: 'long', day: 'numeric'
+        }
+        newDate = newDate.toLocaleString('en-US', options)
+        // let currentDate = journaldate.getFullYear()+'-'+ months[journaldate.getMonth()]+'-'+journaldate.getDate();
+
+
+
 
         return( 
             <center>
@@ -60,7 +71,7 @@ class Journal extends Component{
                 </button> 
                 </p>
                 
-                 <Card.Header><p align="left" className="date"><strong>{date}</strong></p></Card.Header>
+                 <Card.Header><p align="left" className="date"><strong>{newDate}</strong></p></Card.Header>
                  <p className= "scrollabletextbox" align="left">{content}
                  </p>
                  
