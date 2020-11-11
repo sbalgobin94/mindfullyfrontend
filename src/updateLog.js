@@ -78,9 +78,7 @@ class UpdateLogForm extends React.Component{
                     <input type="submit" value="Enter" />
                 </form>
                 </center>
-                <br></br>
-                <br></br>
-                <br></br>
+               
             </div>
             
         )

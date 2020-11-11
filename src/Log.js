@@ -3,6 +3,7 @@ import LogContainer from './LogContainer'
 import { Button, Card } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import UpdateLogForm from './updateLog'
+import Accordion from 'react-bootstrap/Accordion'
 
 class Log extends Component{
 
@@ -63,16 +64,23 @@ class Log extends Component{
                 <img className= "moodimg" src={this.props.moodImg} alt="Card image"/>
                 <br></br>
                 <br></br>
-                <p className= "notes">{this.props.notes}</p>
-                 <button className="card-link" onClick={this.displayUpdateForm}>✏️</button>
-
-                 
+                <p className= "notes scrollabletextbox2">{this.props.notes}</p>
                  </Card.Body>
-
-                 
-                 {updateForm}
-                 
             </Card>
+            <Accordion>
+                <Card>
+                    <Accordion.Toggle as={Button} variant="link" eventKey="2" className="accordion" onClick={this.displayUpdateForm}>
+                    ✍️
+                    </Accordion.Toggle>
+                    
+                    <Accordion.Collapse eventKey="2">
+                    <Card.Body>{updateForm}</Card.Body>
+                    </Accordion.Collapse>
+                </Card>
+            </Accordion>
+            <br></br>
+            <br></br>
+
             </center>
 
         )

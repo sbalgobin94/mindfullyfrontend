@@ -5,6 +5,7 @@ import React, { Component } from 'react'
 import JournalContainer from './JournalContainer'
 import NewJournalForm from './newJournalForm'
 import LogContainer from './LogContainer'
+import GoalContainer from './GoalContainer'
 import NewLogForm from './newLogForm'
 import MoodChart from './MoodChart'
 import { Button, Card } from 'react-bootstrap'
@@ -21,6 +22,7 @@ class App extends Component {
     journalEntries: [],
     logs: [],
     moods: [],
+    goals: [],
     searchTerm: ""
   }
 
@@ -52,6 +54,14 @@ class App extends Component {
       .then((arrayOfMoods) => {
         this.setState({
           moods: arrayOfMoods
+        })
+      })
+
+      fetch("http://localhost:3000/goals")
+      .then(res => res.json())
+      .then((arrayOfGoals) => {
+        this.setState({
+          goals: arrayOfGoals
         })
       })
 
@@ -147,6 +157,12 @@ class App extends Component {
                 to={`/logs`}>
                   Mood Tracker
               </NavLink>
+
+              <NavLink 
+                key= "goals"
+                to={`/goals`}>
+                  Goals
+              </NavLink>
               </ul>
             </aside>
 
@@ -178,6 +194,13 @@ class App extends Component {
             logs={this.state.logs}
             deleteLogFromState={this.deleteLogFromState}
             updateLogFromState={this.updateLogFromState} />
+          </Route>
+
+          <Route path='/goals'>
+            <GoalContainer 
+              goals={this.state.goals}
+            />
+
           </Route>
         </div>
       

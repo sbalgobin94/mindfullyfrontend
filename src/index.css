@@ -52,8 +52,9 @@ code {
 }
 
 .logcard {
-  width: 650px;
-  height: 600px;
+  width: 35rem;
+  min-height: 20rem;
+ 
 }
 
 .moodimg {

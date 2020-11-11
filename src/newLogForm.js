@@ -72,7 +72,7 @@ class NewLogForm extends React.Component{
                     type="text"
                     id="notes"
                     name="notes"
-                    rows="10"
+                    rows="5"
                     columns="50"
                     placeholder="Add some notes about your day..."
                     value={this.state.notes}
