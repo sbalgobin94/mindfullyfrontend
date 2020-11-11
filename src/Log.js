@@ -42,6 +42,13 @@ class Log extends Component{
             date={this.props.log.date} />
         }
 
+        let logdate= this.props.date
+        let newDate= new Date(logdate + 'T00:00:00')
+        let options = {
+            year: 'numeric', month: 'long', day: 'numeric'
+        }
+        newDate = newDate.toLocaleString('en-US', options)
+
         return( 
             
             <center>
@@ -52,7 +59,7 @@ class Log extends Component{
                 🗑️
                 </button> 
                 </p>
-                <p className= "date"><strong>{this.props.date}</strong></p>
+                <p className= "date"><strong>{newDate}</strong></p>
                 <img className= "moodimg" src={this.props.moodImg} alt="Card image"/>
                 <br></br>
                 <br></br>

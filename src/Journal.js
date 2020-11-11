@@ -48,7 +48,7 @@ class Journal extends Component{
             key={this.props.journal.id} />
         }
 
-        let months= ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+        
         let journaldate= this.props.date
         let newDate= new Date(journaldate + 'T00:00:00')
         let options = {
