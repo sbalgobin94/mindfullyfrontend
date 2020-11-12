@@ -9,9 +9,7 @@ function GoalContainer(props){
             goal={singularGoal}
             name={singularGoal.name}
             status= {singularGoal.status}
-            
-            
-
+            deleteGoalFromState={props.deleteGoalFromState}
             
         />
 

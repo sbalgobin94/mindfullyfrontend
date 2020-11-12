@@ -42,7 +42,7 @@ class NewGoalForm extends React.Component{
             })
 
             this.setState({
-                    content: ""
+                    name: ""
             }
             )
     }
@@ -79,7 +79,7 @@ class NewGoalForm extends React.Component{
 
                 ></textarea>
                 <br></br>
-                <center><input type="submit" value="Set" /></center>
+                <center><input className="btn btn-outline-secondary" type="button submit" value="Set" /></center>
                 <br></br>
             </form></center></Card.Body>
                     </Accordion.Collapse>

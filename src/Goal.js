@@ -26,6 +26,16 @@ handleInputChange = (evt) => {
     })
 }
 
+    handleDelete = (evt) => {
+    fetch(`http://localhost:3000/goals/${this.props.goal.id}`, {
+            method: "DELETE"
+        })
+            .then(res => res.json())
+            .then((deletedObj) => {
+                this.props.deleteGoalFromState(this.props.goal.id)
+            })
+    }
+
 
     handleSubmit = (evt) => {
         evt.preventDefault()
@@ -54,16 +64,19 @@ handleInputChange = (evt) => {
 }
     render (){
         let {id, name, status} = this.props.goal
-
-
-        let finished = "finished"
+        console.log(this.props)
         return( 
         <center>
-        <div className="card goalcard" onClick={this.goalChange}>
-        <ul className="list-group list-group-flush">
-        <li className="list-group-item">{this.state.status == false? <p>🟡 {name}</p>:<s>🟢 {name}</s> }</li>
-        </ul>
+        <div className="card goalcard" align="left">
+            <ul className="list-group list-group-flush">
+            <li className="list-group-item">{this.state.status == false? <p>🟡 {name}</p> : <s>🟢 {name}</s> }</li>
+            </ul>
+            <div className="btn-group" role="group" aria-label="Basic example">
+                <button type="button" className="btn btn-light" onClick={this.handleDelete}>❌</button>
+                <button type="button" className="btn btn-light" onClick={this.goalChange}>✅</button>
+            </div>
         </div>
+           
         <br></br>
         </center>
         

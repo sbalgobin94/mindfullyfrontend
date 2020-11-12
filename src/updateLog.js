@@ -75,7 +75,7 @@ class UpdateLogForm extends React.Component{
                     value={this.state.notes}
                     onChange={this.handleInputChange} /></center>
         
-                    <input type="submit" value="Enter" />
+                    <input type="button submit" className="btn btn-outline-secondary" value="Enter" />
                 </form>
                 </center>
                

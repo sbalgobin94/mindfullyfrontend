@@ -97,3 +97,8 @@ label {
   width: 15rem;
 }
 
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%
+}

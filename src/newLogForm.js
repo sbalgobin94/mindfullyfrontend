@@ -78,7 +78,7 @@ class NewLogForm extends React.Component{
                     value={this.state.notes}
                     onChange={this.handleInputChange} /></center>
 
-                    <input type="submit" value="Log" />
+                    <input type=" button submit" className="btn btn-outline-secondary" value="Log" />
                 </form>
                 </center>
                 <br></br>

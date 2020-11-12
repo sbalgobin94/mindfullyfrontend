@@ -37,6 +37,7 @@ code {
 
 .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  border-color: #31708e
   
 }
 
@@ -96,5 +97,9 @@ width:30rem;
 
 
 .goalcard{
-  background-color: #31708e;
+  border-color: #31708e ;
+}
+
+.list-group-item{
+  color: #31708e;
 }

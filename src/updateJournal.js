@@ -65,7 +65,7 @@ class UpdateJournalForm extends React.Component{
                 rows="10" 
                 cols="50">Start journaling...</textarea>
                 <br></br>
-                <input type="submit" value="Submit" />
+                <input type="button submit" className="btn btn-outline-secondary" value="Submit" />
             </form>
             </p>
         </div>

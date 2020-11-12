@@ -5,6 +5,7 @@ import { Button, Card } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Accordion from 'react-bootstrap/Accordion'
 
+let months=["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 let thisday = new Date();
 let currentDate = thisday.getFullYear()+'-'+(thisday.getMonth()+1)+'-'+thisday.getDate();
 
@@ -76,7 +77,7 @@ class NewJournalForm extends React.Component{
 
                 >Start journaling...</textarea>
                 <br></br>
-                <center><input type="submit" value="Publish" /></center>
+                <center><input type="button submit" className="btn btn-outline-secondary" value="Publish" /></center>
                 <br></br>
             </form></center></Card.Body>
                     </Accordion.Collapse>

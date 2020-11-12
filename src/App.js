@@ -107,6 +107,15 @@ class App extends Component {
     })
   }
 
+  deleteGoalFromState = (deletedID) => {
+    let copyOfGoals = this.state.goals.filter(goal => {
+      return goal.id !== deletedID
+    })
+    this.setState({
+      goals: copyOfGoals
+    })
+  }
+
   
 
   updateJournalFromState = (updatedObj) => {
@@ -223,6 +232,7 @@ class App extends Component {
             <GoalContainer 
               goals={this.state.goals}
               updateGoalFromState={this.updateGoalFromState}
+              deleteGoalFromState={this.deleteGoalFromState}
             />
 
           </Route>
