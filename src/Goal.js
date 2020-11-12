@@ -61,7 +61,7 @@ handleInputChange = (evt) => {
         <center>
         <div className="card goalcard" onClick={this.goalChange}>
         <ul className="list-group list-group-flush">
-        <li className="list-group-item">{this.state.status == false? <p>{name}</p>:<s>{name}</s> }</li>
+        <li className="list-group-item">{this.state.status == false? <p>🟡 {name}</p>:<s>🟢 {name}</s> }</li>
         </ul>
         </div>
         <br></br>
