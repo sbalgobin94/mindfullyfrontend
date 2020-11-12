@@ -12,6 +12,7 @@ import { Button, Card } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import {Line} from 'react-chartjs-2'
 import Search from './Search'
+import NewGoalForm from './NewGoalForm'
 
 
 import { Route, Switch, Link, NavLink } from 'react-router-dom'
@@ -79,7 +80,13 @@ class App extends Component {
     this.setState({
       logs: copyOfLogs
     })
-    console.log(this.state.logs)
+  }
+
+  addGoalToState = (newlyCreatedGoal) => {
+    let copyOfGoals= [newlyCreatedGoal, ...this.state.goals]
+    this.setState({
+      goals: copyOfGoals
+    })
   }
   
   deleteJournalFromState = (deletedID) => {
@@ -125,6 +132,19 @@ class App extends Component {
     })
     this.setState({
       logs: copyOfLogs
+    })
+  }
+
+  updateGoalFromState = (updatedObj) => {
+    let copyOfGoals = this.state.goals.map((goal) => {
+      if(goal.id === updatedObj.id){
+        return updatedObj
+      } else{
+        return goal
+      }
+    })
+    this.setState({
+      goals: copyOfGoals
     })
   }
 
@@ -197,8 +217,12 @@ class App extends Component {
           </Route>
 
           <Route path='/goals'>
+            <NewGoalForm 
+            addGoalToState={this.addGoalToState}
+            />
             <GoalContainer 
               goals={this.state.goals}
+              updateGoalFromState={this.updateGoalFromState}
             />
 
           </Route>
