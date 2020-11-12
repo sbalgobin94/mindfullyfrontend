@@ -55,7 +55,8 @@ class NewLogForm extends React.Component{
                 <br></br>
                 <br></br>
                 <center>
-                <center><h3 className="feel">How are you feeling today?</h3></center>
+                <center>
+                    <div className="feeldiv"><h3 className="feel">How are you feeling today?</h3></div></center>
                 <br></br>
                 <form onSubmit={this.handleSubmit}>
                 <label htmlFor="mood_id"> 
@@ -78,7 +79,7 @@ class NewLogForm extends React.Component{
                     value={this.state.notes}
                     onChange={this.handleInputChange} /></center>
 
-                    <input type=" button submit" className="btn btn-outline-secondary" value="Log" />
+                    <input type=" button submit" className="btn btn-secondary" value="Log" />
                 </form>
                 </center>
                 <br></br>

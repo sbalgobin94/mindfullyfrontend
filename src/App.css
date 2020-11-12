@@ -1,12 +1,14 @@
 .App {
   text-align: center;
-  background-color: #f7f9fb;
+
+ 
 }
 
 
 .App-logo {
-  height: 20vmin;
+  height: 10vmin;
   pointer-events: none;
+ 
 }
 
 /* @media (prefers-reduced-motion: no-preference) {
@@ -17,12 +19,18 @@
 
 .App-header {
 
-  min-height: 25vh;
+  min-height: 20vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
+ 
+
+ 
+}
+
+h1{
   color: #687864;
 }
 
@@ -41,6 +49,7 @@
 
 .App-title {
   font-size: 1.5em;
+ 
 }
 
 .container {
@@ -54,23 +63,8 @@
   display: table;
 }
 
-h6{
-  font-family: cursive;
-  font-size: 1em;
-  margin-bottom: 10px;
-}
 
-/* form {
-  display: flex;
-  padding: 1em;
-  background: #F3D9DC;
-  width: 35%;
-  margin: auto;
-  border: .2em solid #D7BEA8;
-  border-radius: 5px;
-  justify-content: center;
-  margin-bottom: 2em;
-} */
+
 
 input[type='submit']{
   margin-left: 10px;
@@ -89,8 +83,8 @@ label {
 }
 
 .chart {
-  width: 400px;
-  height: 200px;
+  width: 450px;
+  height: 300px;
 }
 
 .goalcard{
@@ -100,5 +94,21 @@ label {
 .sticky {
   position: fixed;
   top: 0;
+ 
   width: 100%
+}
+
+.fixed-header{
+  overflow: hidden;
+ position: fixed;
+ z-index: 1000;
+ top: 0px;
+ left: 0px;
+ right: 0px;
+ background:#f7f9fb;
+ opacity: 0.9;
+ padding:5px;
+ font-family: "Montserrat", sans-serif;
+  color:#687864;
+  box-shadow:10px 10px 50px 5px grey;
 }

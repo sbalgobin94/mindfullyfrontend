@@ -117,6 +117,7 @@ function MoodChart(props) {
 
     return (
         <center>
+            <br></br>
         <div className="chart">
             <br></br>
             <Line data={data} />

@@ -13,6 +13,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import {Line} from 'react-chartjs-2'
 import Search from './Search'
 import NewGoalForm from './NewGoalForm'
+import Home from './Home'
 
 
 import { Route, Switch, Link, NavLink } from 'react-router-dom'
@@ -24,7 +25,8 @@ class App extends Component {
     logs: [],
     moods: [],
     goals: [],
-    searchTerm: ""
+    searchTerm: "",
+    quotes: []
   }
 
   changeSearchTerm = (termFromChild) => {
@@ -65,6 +67,16 @@ class App extends Component {
           goals: arrayOfGoals
         })
       })
+
+      fetch("https://type.fit/api/quotes")
+      .then(res => res.json())
+      .then((arrayOfQuotes) => {
+          this.setState({
+              quotes: arrayOfQuotes
+            })
+       })
+
+      
 
   }
 
@@ -173,8 +185,13 @@ class App extends Component {
           <Header/>
         </header>
       
+        
+      
         <aside className="sidebar">
               <ul>
+
+             
+
               <NavLink 
                 key= "journals"
                 to={`/journals`}>
@@ -194,6 +211,13 @@ class App extends Component {
               </NavLink>
               </ul>
             </aside>
+
+          <Switch>
+          
+          <Route path="/">
+            <Home
+            quotes={this.state.quotes}/>
+          </Route>
 
           
           <Route path="/journals">
@@ -236,6 +260,8 @@ class App extends Component {
             />
 
           </Route>
+
+          </Switch>
         </div>
       
         

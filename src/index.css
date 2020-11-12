@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #f7f9fb;
 }
 
 code {
@@ -16,6 +17,7 @@ code {
   float: left;
   background: #f7f9fb;
   color: white;
+  position: fixed;
 }
 
 .sidebar ul {
@@ -39,6 +41,7 @@ code {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   border-color: #31708e
   
+  
 }
 
 .journalcard {
@@ -54,8 +57,9 @@ code {
 }
 
 .logcard {
-  width: 35rem;
+  width: 30rem;
   min-height: 20rem;
+  
  
 }
 
@@ -69,7 +73,7 @@ code {
 }
 
 .feel{
-  color: #5085A5
+  color:#687864;
 }
 
 .scroll {
@@ -102,4 +106,16 @@ width:30rem;
 
 .list-group-item{
   color: #31708e;
+}
+
+
+.chart{
+  background-color: #f7f9fb;
+}
+
+.feeldiv{
+  
+  width:20rem;
+  background-color: white;
+  opacity: 0.8;
 }
